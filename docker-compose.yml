@@ -15,7 +15,7 @@ services:
       DB_HOST: postgres_db
       DB_PORT: 5432
 
-  db:
+  postgres_db:
     container_name: postgres_db_posts
     image: postgres:12
     ports:

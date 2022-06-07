@@ -38,7 +38,9 @@ public class PostService {
         return postRepository.findById(postId);
     }
 
-    public Page<Post> getPostsByUserId(String userId){return postRepository.findAllPostByUserId(userId,firstPageWithTwoElements);}
+    public Page<Post> getPostsByUserId(String userId){
+        System.out.println("llega al servicio");
+        return postRepository.findAllPostByUserId(userId,firstPageWithTwoElements);}
 
     public void addNewPost(Post post) {
 

@@ -3,6 +3,7 @@ package com.ingsis.jibberjabberposts.Controller;
 import com.ingsis.jibberjabberposts.Model.Post;
 import com.ingsis.jibberjabberposts.Service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -43,7 +44,7 @@ public class PostController {
         postService.updatePost(postId,message);
     }
     @GetMapping(path = "/user/{userId}")
-    public void getPostsById(@PathVariable("userId") String userId){
-        postService.getPostsByUserId(userId);
+    public Page<Post> getPostsById(@PathVariable("userId") String userId){
+        return postService.getPostsByUserId(userId);
     }
 }
