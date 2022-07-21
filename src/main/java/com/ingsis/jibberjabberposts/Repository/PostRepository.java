@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 public interface PostRepository extends JpaRepository<Post, Long> {
@@ -20,5 +21,5 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 ////    @Query("select p from Post p where p.userId = ?1")
 //    List<Post> findAllPostsByUserId(String userId);
 
-    Page<Post> findAllPostByUserId(String userId, Pageable pageable);
+    Page<Post> findAllPostByUserId(UUID userId, Pageable pageable);
 }

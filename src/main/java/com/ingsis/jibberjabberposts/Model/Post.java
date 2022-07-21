@@ -1,6 +1,7 @@
 package com.ingsis.jibberjabberposts.Model;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Table
@@ -16,18 +17,17 @@ public class Post {
             generator = "post_sequence"
     )
     private Long id;
-    private String userId;
+    private UUID userId;
     private String message;
     private int length;
-    private int maxLength = 140;
 
-    public Post(Long id, String userId, String message) {
+    public Post(Long id, UUID userId, String message) {
         this.id = id;
         this.userId = userId;
         this.message = message;
     }
 
-    public Post(String message, String userId) {
+    public Post(String message, UUID userId) {
         this.message = message;
         this.userId = userId;
     }
@@ -44,7 +44,7 @@ public class Post {
         return message;
     }
 
-    public String getUserId() {
+    public UUID getUserId() {
         return userId;
     }
 
@@ -58,7 +58,7 @@ public class Post {
         this.message = message;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(UUID userId) {
         this.userId = userId;
     }
 

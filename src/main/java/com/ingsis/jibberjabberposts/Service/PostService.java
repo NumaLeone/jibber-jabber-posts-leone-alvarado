@@ -18,6 +18,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class PostService {
@@ -38,7 +39,7 @@ public class PostService {
         return postRepository.findById(postId);
     }
 
-    public Page<Post> getPostsByUserId(String userId){
+    public Page<Post> getPostsByUserId(UUID userId){
         System.out.println("llega al servicio");
         return postRepository.findAllPostByUserId(userId,firstPageWithTwoElements);}
 

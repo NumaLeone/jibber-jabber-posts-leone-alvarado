@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @RequestMapping(path = "v1/posts")
@@ -44,7 +45,7 @@ public class PostController {
         postService.updatePost(postId,message);
     }
     @GetMapping(path = "/user/{userId}")
-    public Page<Post> getPostsById(@PathVariable("userId") String userId){
+    public Page<Post> getPostsById(@PathVariable("userId") UUID userId){
         return postService.getPostsByUserId(userId);
     }
 }
